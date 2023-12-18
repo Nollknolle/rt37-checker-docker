@@ -3,6 +3,7 @@
 rt37-checker ist ein Docker-Container, mit dem man jeden Tag überprüfen kann, ob seine Gewinnzahl gewonnen hat oder nicht.
 
 ## Usage
+- **GOTIFY_SERVER** and **GOTIFY_APP_TOKEN** are optional parameters.
 ### Docker Command:
 ```bash
 docker run --restart unless-stopped --name rt37-checker -e gewinnZahl=123 -e winner=Mustergewinner -e GOTIFY_SERVER=http://gotify.send -e GOTIFY_APP_TOKEN=abcdefg ghcr.io/nollknolle/rt37-checker
