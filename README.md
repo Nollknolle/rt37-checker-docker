@@ -5,7 +5,7 @@ rt37-checker ist ein Docker-Container, mit dem man jeden Tag überprüfen kann, 
 ## Usage
 ### Docker Command:
 ```bash
-docker run --restart unless-stopped --name rt37-checker -e gewinnZahl=123 -e winner=Mustergewinner ghcr.io/nollknolle/rt37-checker
+docker run --restart unless-stopped --name rt37-checker -e gewinnZahl=123 -e winner=Mustergewinner -e GOTIFY_SERVER=http://gotify.send -e GOTIFY_APP_TOKEN=abcdefg ghcr.io/nollknolle/rt37-checker
 ```
 
 ### Docker-Compose:
@@ -18,6 +18,8 @@ services:
         environment:
             - gewinnZahl=123
             - winner=Mustergewinner
+            - GOTIFY_SERVER=http://gotify.send # optional
+            - GOTIFY_APP_TOKEN=abcdefg # optional
         image: ghcr.io/nollknolle/rt37-checker
 ```
 
